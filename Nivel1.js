@@ -173,7 +173,7 @@ x=x+70;
                 this.text11.setInteractive();
     
                 
-                console.log(' cad= '+this.cadena+"  tamaño = "+this.cadena.length);
+                //console.log(' cad= '+this.cadena+"  tamaño = "+this.cadena.length);
                 for(var a=0;a<this.cadena.length;a++){
                     if(this.cadena.charAt(a)===String.fromCharCode(65+i)){
                         this.text11.on('clicked', this.clickHandler, this);
