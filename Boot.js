@@ -29,6 +29,7 @@ export class Boot extends Phaser.Scene {
 
     preload ()
     {
+        console.log('cargando archivos');
         this.load.audio('themeF','assets/audio/neriakX_-_Enigma_Gun_Extended_Mix.mp3');
         this.load.audio('theme','assets/audio/audio1.mp3');
 
@@ -65,14 +66,14 @@ export class Boot extends Phaser.Scene {
 
     create ()
     {
-        
+        console.log('colocando musica de fondo volumen medio');
         let scene = this.scene;
 var music = this.sound.add('theme');
 
 
 music.play();
 
-music.volume=1;
+music.volume=0.1;
 
                 scene.start('instructions');
 
