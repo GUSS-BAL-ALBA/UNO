@@ -29,7 +29,7 @@ export class Game7 extends Phaser.Scene {
     }
  preload ()
 {
-    this.load.audio('themeF','assets/audio/neriakX_-_Enigma_Gun_Extended_Mix.mp3');
+    
     this.cantSimbolos=0;
     this.cantAlfabeto=0;
     this.cantNumeros=0;
