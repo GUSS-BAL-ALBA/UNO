@@ -150,11 +150,12 @@ this.musicLetra.set('Ú',this.sound.add('U'));
         this.musicLetra.set('?',this.sound.add('reventar'));
         this.musicLetra.set('¿',this.sound.add('reventar'));
 //////////////////////////////////////
-        this.cargarAlfabeto();
+this.colocarFrase();        
+this.cargarAlfabeto();
 
 this.reiniciarTemporizador();
 
-this.colocarFrase();
+//
        
     }
     colocarFrase(){

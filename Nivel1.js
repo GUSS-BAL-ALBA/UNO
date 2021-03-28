@@ -114,12 +114,12 @@ this.load.audio('paseNivel','assets/audio/ganador.mp3');
             {
                 this.musicLetra.set(String.fromCharCode(65+i),this.sound.add(String.fromCharCode(65+i)));
             }
-
+            this.colocarFrase();
         this.cargarAlfabeto();
 
 this.reiniciarTemporizador();
 
-this.colocarFrase();
+//this.colocarFrase();
        
     }
     colocarFrase(){
