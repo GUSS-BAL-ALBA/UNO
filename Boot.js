@@ -30,7 +30,7 @@ export class Boot extends Phaser.Scene {
     preload ()
     {
         console.log('cargando archivos');
-        this.load.audio('themeF','assets/audio/neriakX_-_Enigma_Gun_Extended_Mix.mp3');
+        //this.load.audio('themeF','assets/audio/neriakX_-_Enigma_Gun_Extended_Mix.mp3');
         this.load.audio('theme','assets/audio/audio1.mp3');
 
         this.load.image('bg', 'assets/pics/undersea.jpg');
