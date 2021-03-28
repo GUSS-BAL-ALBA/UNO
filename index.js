@@ -11,7 +11,7 @@ import { GameOver4 } from './GameOver4.js';
 import { Fin } from './fin.js';
 const config = {
     type: Phaser.AUTO,
-    parent: 'phaser-example',
+    //parent: 'phaser-example',
     width: 800,
     height: 600,
     //scene:[Game7]
