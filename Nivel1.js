@@ -52,11 +52,12 @@ this.load.audio('paseNivel','assets/audio/ganador.mp3');
             this.alive=0;
             this.load.audio('perdiste','sound/perdiste.mp3');
             this.load.audio('reventar','sound/popp.mp3');
-
+/*
             for (var i = 0; i < this.cantSimbolos; i++)
             {
                 this.load.audio(String.fromCharCode(65+i),'sound/'+String.fromCharCode(97+i)+'.mp3');
             }
+            */
         /////////////////////////
 
         this.load.atlas('sea', 'assets/animations/seacreatures_json.png', 'assets/animations/seacreatures_json.json');

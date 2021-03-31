@@ -44,7 +44,7 @@ this.cadena;
 
     preload ()
     {
-        this.load.audio('theme','assets/audio/audio1.mp3');
+        //this.load.audio('theme','assets/audio/audio1.mp3');
         this.load.audio('paseNivel','assets/audio/ganador.mp3');
         
         //////////////////////
