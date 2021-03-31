@@ -8,6 +8,9 @@ export class Nivel2 extends Phaser.Scene{
         this.text11;
 this.cadena;
         this.frases;
+        this.textSignificado;
+        this.significadoCadena;
+        this.significadoFrase;
         this.musicPasarNivel;
         /////////////////
         let info;
@@ -51,9 +54,15 @@ this.cantSimbolos=26;
         this.yy=1;
        // this.cadena='UNO';
        //'UNO','DOS','TRES','CUATRO','CINCO','SEIS',
-        this.frases=['SI UN PROBLEMA TIENE SOLUCIÓN, ¿PARA QUÉ PREOCUPARSE? Y, SI NO LO TIENE, ¿PARA QUÉ PREOCUPARSE?. NO DEBEMOS DEJARNOS LLEVAR POR LAS DUDAS Y PREOCUPACIONES, SINO ENSEÑAR A NUESTROS HIJOS A SER DECIDIDOS.','EL SOL NO SABE DE BUENOS, EL SOL NO SABE DE MALOS. EL SOL ILUMINA Y CALIENTA A TODOS POR IGUAL. QUIEN SE ENCUENTRA A SÍ MISMO, ES COMO EL SOL. NO DEBEN IMPORTARNOS LAS DIFERENCIAS, DEBEMOS ENSEÑAR A LOS NIÑOS A RESPETAR A TODOS POR IGUAL.','HASTA EL VIAJE MÁS LARGO COMIENZA CON UN SOLO PASO. AUNQUE PAREZCA QUE LA META ES INALCANZABLE, DEBEMOS MOTIVAR A NUESTROS HIJOS PARA QUE LO INTENTEN.','NADIE TROPIEZA MIENTRAS ESTÁ ACOSTADO EN LA CAMA. HAY QUE ARRIESGARSE, Y SOBRE TODO, ESFORZARNOS PARA LOGRAR NUESTROS OBJETIVOS.','LA FELICIDAD VIENE A LA CASA DONDE RÍEN. DEBEMOS ENSEÑAR A NUESTROS HIJOS A SER OPTIMISTAS.','SI PREGUNTAS SENTIRÁS VERGÜENZA UN MINUTO, SI NO LO HACES SENTIRÁS VERGÜENZA TODA LA VIDA','VERIFICA SIETE VECES ANTES DE CUESTIONAR A UNA PERSONA. HAY QUE RESPETAR LAS OPINIONES DE LOS DEMÁS.','HAZ TODO LO QUE PUEDAS, LO DEMÁS DÉJASELO AL DESTINO. SI HAS HECHO TODO LO POSIBLE POR LOGRAR TU OBJETIVO, SIÉNTETE ORGULLOSO DE TI MISMO, INCLUSO AUNQUE NO SALGA COMO ESPERAS.','EL QUE QUIERE SUBIR, INVENTA LA ESCALERA. DEBEMOS MOTIVAR A NUESTROS HIJOS PARA QUE SE SOBREPONGAN A LOS OBSTÁCULOS DE LA VIDA.','LAS FLORES BONITAS NO DAN BUENOS FRUTOS. NO HAY QUE DEJARSE LLEVAR POR LAS APARIENCIAS.','PROVERBIOS JAPONESES'];
+        this.frases=['SI UN PROBLEMA TIENE SOLUCIÓN, ¿PARA QUÉ PREOCUPARSE? Y, SI NO LO TIENE, ¿PARA QUÉ PREOCUPARSE?.','EL SOL NO SABE DE BUENOS, EL SOL NO SABE DE MALOS.','HASTA EL VIAJE MÁS LARGO COMIENZA CON UN SOLO PASO.','NADIE TROPIEZA MIENTRAS ESTÁ ACOSTADO EN LA CAMA.','LA FELICIDAD VIENE A LA CASA DONDE RÍEN.','SI PREGUNTAS SENTIRÁS VERGÜENZA UN MINUTO, SI NO LO HACES SENTIRÁS VERGÜENZA TODA LA VIDA','VERIFICA SIETE VECES ANTES DE CUESTIONAR A UNA PERSONA.','HAZ TODO LO QUE PUEDAS, LO DEMÁS DÉJASELO AL DESTINO.','EL QUE QUIERE SUBIR, INVENTA LA ESCALERA.','LAS FLORES BONITAS NO DAN BUENOS FRUTOS.','PROVERBIOS JAPONESES'];
+
+        this.significadoFrase=['NO DEBEMOS DEJARNOS LLEVAR POR LAS DUDAS\nY PREOCUPACIONES, SINO ENSEÑAR A NUESTROS\nHIJOS A SER DECIDIDOS.','EL SOL ILUMINA Y CALIENTA A TODOS POR IGUAL.\n QUIEN SE ENCUENTRA A SÍ MISMO, ES COMO EL SOL. \nNO DEBEN IMPORTARNOS LAS DIFERENCIAS,\nDEBEMOS ENSEÑAR A LOS NIÑOS A RESPETAR A TODOS POR IGUAL.','AUNQUE PAREZCA QUE LA META ES INALCANZABLE, \nDEBEMOS MOTIVAR A NUESTROS HIJOS PARA QUE LO INTENTEN.','HAY QUE ARRIESGARSE, Y SOBRE TODO, ESFORZARNOS \nPARA LOGRAR NUESTROS OBJETIVOS.','DEBEMOS ENSEÑAR A NUESTROS HIJOS A SER OPTIMISTAS.','SI PREGUNTAS SENTIRÁS VERGÜENZA UN MINUTO, \nSI NO LO HACES SENTIRÁS VERGÜENZA TODA LA VIDA','HAY QUE RESPETAR LAS OPINIONES DE LOS DEMÁS.','SI HAS HECHO TODO LO POSIBLE POR LOGRAR TU OBJETIVO, \nSIÉNTETE ORGULLOSO DE TI MISMO, \nINCLUSO AUNQUE NO SALGA COMO ESPERAS.','DEBEMOS MOTIVAR A NUESTROS HIJOS \nPARA QUE SE SOBREPONGAN A LOS OBSTÁCULOS DE LA VIDA.','NO HAY QUE DEJARSE LLEVAR POR LAS APARIENCIAS.','PROVERBIOS JAPONESES'];
+
+
         console.log(this.frases.length+'  FRASES NIVEL 2');
-        this.cadena=this.frases[Phaser.Math.Between(0, 10)];
+        var pos=Phaser.Math.Between(0, 10);
+        this.cadena=this.frases[pos];
+        this.significadoCadena=this.significadoFrase[pos];
 
             this.letra='0';
             this.alive=0;
@@ -134,6 +143,17 @@ this.musicLetra.set('Ü',this.sound.add('U'));
         this.musicLetra.set('¡',this.sound.add('reventar'));
         this.musicLetra.set('?',this.sound.add('reventar'));
         this.musicLetra.set('¿',this.sound.add('reventar'));
+        ///////////////////
+        this.textSignificado = this.add.text(10, 220, '', { font: "20px Arial Black", fill: "#fff" });
+        this.textSignificado.setStroke('#00f', 6);
+        this.textSignificado.setShadow(2, 2, "#333333", 2, true, true);
+        /////////////////////
+        this.hsv = Phaser.Display.Color.HSVColorWheel();
+             //  Rainbow Text
+             this.text1 = this.add.text(10, 150, '', { font: "40px Arial Black", fill: "#fff" });
+             this.text1.setStroke('#00f', 16);
+             this.text1.setShadow(2, 2, "#333333", 2, true, true);
+
 //////////////////////////////////////
 this.colocarFrase();        
 this.cargarAlfabeto();
@@ -143,15 +163,16 @@ this.reiniciarTemporizador();
 //
        
     }
+    colocarSignificadoFrase()
+    {
+        this.textSignificado.setText(this.significadoCadena);
+    }
     colocarFrase(){
         //this.text11.setVisible();
              /////////////////////////////////////
-             this.hsv = Phaser.Display.Color.HSVColorWheel();
-
-             //  Rainbow Text
-             this.text1 = this.add.text(10, 450, this.cadena, { font: "50px Arial Black", fill: "#fff" });
-             this.text1.setStroke('#00f', 16);
-             this.text1.setShadow(2, 2, "#333333", 2, true, true);
+             this.text1.setText(this.cadena);
+             
+             //this.colocarSignificadoFrase();
              ///////////////////////////////////////////
     }
     reiniciarTemporizador(){
@@ -178,20 +199,20 @@ this.timer = this.time.addEvent({ delay: 10000*this.temporizador, callback: this
             this.cadena = this.cadena.trim(); 
             
             var x = 50;
-            var y = 130;
+            var y = 350;
             //  Create a bunch of images
             for (var i = 0; i < this.cantSimbolos; i++)
             {
                 
                 if(x>=500){
-y=y+80;
+y=y+60;
 x=50;
                 }
 
-                this.text11 = this.add.text(x, y, String.fromCharCode(65+i), { font: "74px Arial Black", fill: "#fff" });
+                this.text11 = this.add.text(x, y, String.fromCharCode(65+i), { font: "50px Arial Black", fill: "#fff" });
                 this.text11.setStroke('#00f', 16);
                 this.text11.setShadow(2, 2, "#333333", 2, true, true);
-x=x+70;
+x=x+50;
                 
                 this.text11.setInteractive();
     
@@ -225,19 +246,19 @@ x=x+70;
     
     }
     colocarVectorCaracteresAcentoFrase(){
-    var x = 600;
-            var y = 150;
+    var x = 550;
+            var y = 350;
             //  Create a bunch of images
             for (var [clave, valor] of this.vectorCaracteresFrase) {
                 //console.log(clave + " = " + valor);
                 if(x>750){
-                    y=y+70;
-                    x=600;
+                    y=y+60;
+                    x=550;
                 }
-                                    this.text11 = this.add.text(x, y,valor, { font: "60px Arial Black", fill: "#fff" });
+                                    this.text11 = this.add.text(x, y,valor, { font: "50px Arial Black", fill: "#fff" });
                                     this.text11.setStroke('#00f', 16);
                                     this.text11.setShadow(2, 2, "#333333", 2, true, true);
-                                    x=x+70;
+                                    x=x+60;
                                     this.text11.setInteractive();
                                     
                                             this.text11.on('clicked', this.clickHandler, this);
@@ -264,6 +285,7 @@ crearCangrejos()
         var x = Phaser.Math.Between(10, 800);
                 var y = Phaser.Math.Between(100, 500);
         const ray = this.add.sprite(x, y, 'seacreatures').play('stingray');
+        this.colocarSignificadoFrase();
 }
     update ()
     {
@@ -319,6 +341,7 @@ crearCangrejos()
                         
                 
                 this.crearCangrejos();
+                
 
                         }else{
                             //if(this.yy==5)
@@ -332,7 +355,12 @@ crearCangrejos()
                 }
             }
             this.yy++;
-            this.cadena=this.frases[Phaser.Math.Between(0, 10)];
+
+            console.log(this.frases.length+'  FRASES NIVEL 2');
+        var pos=Phaser.Math.Between(0, 10);
+        this.cadena=this.frases[pos];
+        this.significadoCadena=this.significadoFrase[pos];
+
             this.colocarFrase();
             this.cargarAlfabeto();
            
@@ -387,8 +415,9 @@ crearCangrejos()
         }
         gameOver ()
         {
-            
-           
+           // this.significadoCadena='';
+          
+           //this.colocarSignificadoFrase();
                 this.input.off('gameobjectup');
             this.musicPerdiste.play();
            
