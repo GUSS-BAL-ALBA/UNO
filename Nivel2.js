@@ -352,7 +352,7 @@ x=x+70;
                 }
             }
             this.yy++;
-            this.cadena=Phaser.Math.Between(0, 10);
+            this.cadena=this.frases[Phaser.Math.Between(0, 10)];
             
             this.cargarAlfabeto();
             this.colocarFrase();
