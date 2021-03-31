@@ -238,13 +238,9 @@ x=x+70;
             }
             this.yy++;
             this.cadena=this.frases[this.yy-1];
-            
+            this.colocarFrase();
             this.cargarAlfabeto();
-
-
-this.colocarFrase();
-
-            
+           
         }
 
         this.tiempoLimite=this.timedEvent.repeatCount;
