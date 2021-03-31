@@ -74,6 +74,22 @@ export class Boot extends Phaser.Scene {
         this.load.image('coral', 'assets/pics/seabed.png');
 /////////////////////////////////
 
+////////////nnivel dos
+//this.load.atlas('sea', 'assets/animations/seacreatures_json.png', 'assets/animations/seacreatures_json.json');
+//this.load.audio('paseNivel','assets/audio/ganador.mp3');
+       
+//this.load.audio('perdiste','sound/perdiste.mp3');
+//this.load.audio('reventar','sound/popp.mp3');
+/*
+for (var i = 0; i < this.cantSimbolos; i++)
+{
+    this.load.audio(String.fromCharCode(65+i),'sound/'+String.fromCharCode(97+i)+'.mp3');
+}*/
+//  Just a few images to use in our underwater scene
+//this.load.image('undersea', 'assets/pics/undersea.jpg');
+//this.load.image('coral', 'assets/pics/seabed.png');
+///////////////////////////////
+
     }
 
     create ()

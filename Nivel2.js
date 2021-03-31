@@ -42,13 +42,12 @@ this.cadena;
     this.vectorCaracteresFrase=new Map();
     }
 
-    preload ()
+    
+    
+    create ()
     {
-        //this.load.audio('theme','assets/audio/audio1.mp3');
-        this.load.audio('paseNivel','assets/audio/ganador.mp3');
-        
-        //////////////////////
-        this.cantSimbolos=26;
+//////////////////
+this.cantSimbolos=26;
         this.yy=1;
        // this.cadena='UNO';
        //'UNO','DOS','TRES','CUATRO','CINCO','SEIS',
@@ -58,28 +57,9 @@ this.cadena;
 
             this.letra='0';
             this.alive=0;
-            this.load.audio('perdiste','sound/perdiste.mp3');
-            this.load.audio('reventar','sound/popp.mp3');
+//////////////////////////
 
-            for (var i = 0; i < this.cantSimbolos; i++)
-            {
-                this.load.audio(String.fromCharCode(65+i),'sound/'+String.fromCharCode(97+i)+'.mp3');
-            }
-            
-        /////////////////////////
 
-        this.load.atlas('sea', 'assets/animations/seacreatures_json.png', 'assets/animations/seacreatures_json.json');
-
-        //  Just a few images to use in our underwater scene
-        this.load.image('undersea', 'assets/pics/undersea.jpg');
-        this.load.image('coral', 'assets/pics/seabed.png');
-    }
-    onEvent ()
-    {
-        
-    }
-    create ()
-    {
         this.add.image(0, 0, 'undersea').setOrigin(0)
         let kvArray = [{key: 1, value: 10},
             {key: 2, value: 20},
