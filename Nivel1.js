@@ -36,38 +36,18 @@ this.cadena;
         /////////////////////
     }
 
-    preload ()
-    {
-        //this.load.audio('theme','assets/audio/audio1.mp3');
-
-this.load.audio('paseNivel','assets/audio/ganador.mp3');
-        
-        //////////////////////
-        this.cantSimbolos=26;
-        this.yy=1;
-       // this.cadena='UNO';
-        this.frases=['UN PULPO ESTA ENAMORADO  DE UNA ESTRELLITA DE MAR  Y SUS TRES CORAZONCITOS NO DEJAN DE PALPITAR POR SU LADO LA ESTRELLITA ALTIVA Y MUY PRESUMIDA','TAN SOLO UN PRINCIPE AZUL QUIERE TENER EN SU VIDA EL PULPO BAILA EN EL MAR DELANTE DE LA ESTRELLITA Y DE PRONTO UN CORAZON MUCHO MAS FUERTE PALPITA','EL PULPO NADA EN EL MAR  ESTIRANDO SUS TENTACULOS PERO LA ESTRELLA NO MIRA PARA ELLA ES SOLO UN OBSTACULO','CON FUERZA AL VER A LA ESTRELLA LATEN SUS TRES CORAZONES Y AUNQUE QUIERE EN SU INTERIOR NO ATIENDE EL PULPO A RAZONES AL SANGRARLE UN CORAZON','SE HA IDO ALEJANDO DE ELLA SU SANGRE ES COLOR AZUL LO VE ENSEGUIDA LA ESTRELLA POR ESO LE LLAMA A GRITOS CORRIENDO VA DETRAS DE EL PERO EL PULPO ENTRISTECIDO NO QUIERE VOLVERLA A VER','FIN'];
-        this.cadena=this.frases[0];
-            this.letra='0';
-            this.alive=0;
-            this.load.audio('perdiste','sound/perdiste.mp3');
-            this.load.audio('reventar','sound/popp.mp3');
-/*
-            for (var i = 0; i < this.cantSimbolos; i++)
-            {
-                this.load.audio(String.fromCharCode(65+i),'sound/'+String.fromCharCode(97+i)+'.mp3');
-            }
-            */
-        /////////////////////////
-
-        this.load.atlas('sea', 'assets/animations/seacreatures_json.png', 'assets/animations/seacreatures_json.json');
-        this.load.image('undersea', 'assets/pics/undersea.jpg');
-        this.load.image('coral', 'assets/pics/seabed.png');
-    }
+    
 
     create ()
     {
-
+/////////////////////////////////
+this.cantSimbolos=26;
+        this.yy=1;
+this.frases=['UN PULPO ESTA ENAMORADO  DE UNA ESTRELLITA DE MAR  Y SUS TRES CORAZONCITOS NO DEJAN DE PALPITAR POR SU LADO LA ESTRELLITA ALTIVA Y MUY PRESUMIDA','TAN SOLO UN PRINCIPE AZUL QUIERE TENER EN SU VIDA EL PULPO BAILA EN EL MAR DELANTE DE LA ESTRELLITA Y DE PRONTO UN CORAZON MUCHO MAS FUERTE PALPITA','EL PULPO NADA EN EL MAR  ESTIRANDO SUS TENTACULOS PERO LA ESTRELLA NO MIRA PARA ELLA ES SOLO UN OBSTACULO','CON FUERZA AL VER A LA ESTRELLA LATEN SUS TRES CORAZONES Y AUNQUE QUIERE EN SU INTERIOR NO ATIENDE EL PULPO A RAZONES AL SANGRARLE UN CORAZON','SE HA IDO ALEJANDO DE ELLA SU SANGRE ES COLOR AZUL LO VE ENSEGUIDA LA ESTRELLA POR ESO LE LLAMA A GRITOS CORRIENDO VA DETRAS DE EL PERO EL PULPO ENTRISTECIDO NO QUIERE VOLVERLA A VER','FIN'];
+this.cadena=this.frases[0];
+    this.letra='0';
+    this.alive=0;
+//////////////////////////////////////////
         this.musicPasarNivel = this.sound.add('paseNivel');
 
         this.add.image(400, 300, 'undersea');

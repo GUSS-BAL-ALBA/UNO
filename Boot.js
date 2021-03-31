@@ -64,6 +64,16 @@ export class Boot extends Phaser.Scene {
         this.load.audio('gamewon', 'sound/popp.mp3');
         console.log(Phaser.Math.Between(0, 10));
 
+        ///////////////////nivel uno
+        this.load.audio('paseNivel','assets/audio/ganador.mp3');
+        this.load.audio('perdiste','sound/perdiste.mp3');
+        this.load.audio('reventar','sound/popp.mp3');
+
+        this.load.atlas('sea', 'assets/animations/seacreatures_json.png', 'assets/animations/seacreatures_json.json');
+        this.load.image('undersea', 'assets/pics/undersea.jpg');
+        this.load.image('coral', 'assets/pics/seabed.png');
+/////////////////////////////////
+
     }
 
     create ()
