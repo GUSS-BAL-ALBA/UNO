@@ -30,25 +30,18 @@ export class Game7 extends Phaser.Scene {
  preload ()
 {
     
-    this.cantSimbolos=0;
-    this.cantAlfabeto=0;
-    this.cantNumeros=0;
-    this.load.image('donuts', 'image/alfa3.png');
-    this.load.image('fork', 'image/bola2.png');
     
-            this.letra='0';
-            this.load.audio('perdiste','sound/perdiste.mp3');
-            this.load.audio('reventar','sound/popp.mp3');
-
-            this.load.atlas('sea', 'assets/animations/seacreatures_json.png', 'assets/animations/seacreatures_json.json');
-
-            //  Just a few images to use in our underwater scene
-            this.load.image('undersea', 'assets/pics/undersea.jpg');
-            this.load.image('coral', 'assets/pics/seabed.png');    
+       
 }
 
  create ()
 {
+    /////////////////////
+    this.cantSimbolos=0;
+    this.cantAlfabeto=0;
+    this.cantNumeros=0;
+    this.letra='0';
+    ///////////////////////////////
     this.add.image(0, 0, 'undersea').setOrigin(0)
     this.add.image(0, 466, 'coral').setOrigin(0);
 

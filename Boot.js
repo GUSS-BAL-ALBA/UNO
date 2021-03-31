@@ -90,6 +90,21 @@ for (var i = 0; i < this.cantSimbolos; i++)
 //this.load.image('coral', 'assets/pics/seabed.png');
 ///////////////////////////////
 
+//////////////game 7
+this.load.image('donuts', 'image/alfa3.png');
+    //this.load.image('fork', 'image/bola2.png');
+    
+         /*   
+            this.load.audio('perdiste','sound/perdiste.mp3');
+            this.load.audio('reventar','sound/popp.mp3');
+
+            this.load.atlas('sea', 'assets/animations/seacreatures_json.png', 'assets/animations/seacreatures_json.json');
+
+            //  Just a few images to use in our underwater scene
+            this.load.image('undersea', 'assets/pics/undersea.jpg');
+            this.load.image('coral', 'assets/pics/seabed.png'); 
+*/
+////////////////////////////
     }
 
     create ()
