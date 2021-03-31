@@ -247,6 +247,24 @@ x=x+70;
             
         }
 
+crearCangrejos()
+{
+    for (var i = 0; i < 3; i++)
+    {
+        var x = Phaser.Math.Between(100, 700);
+        var y = Phaser.Math.Between(500, 600);
+        const smallCrab = this.add.sprite(x, y, 'seacreatures').setOrigin(0).play('crab');
+    }
+    this.anims.create({ key: 'purpleFish', frames: this.anims.generateFrameNames('sea', { prefix: 'purpleFish', end: 20, zeroPad: 4 }), repeat: -1 });
+        this.anims.create({ key: 'stingray', frames: this.anims.generateFrameNames('sea', { prefix: 'stingray', end: 23, zeroPad: 4 }), repeat: -1 });
+
+        var x = Phaser.Math.Between(10,800);
+                var y = Phaser.Math.Between(50, 600);
+        const fish = this.add.sprite(x, y, 'seacreatures').play('purpleFish');
+        var x = Phaser.Math.Between(10, 800);
+                var y = Phaser.Math.Between(100, 500);
+        const ray = this.add.sprite(x, y, 'seacreatures').play('stingray');
+}
     update ()
     {
         this.ray.tilePositionX+=1;
@@ -269,15 +287,7 @@ x=x+70;
             
             this.letra='0';
             this.alive=0;
-            for (var i = 0; i < this.cantSimbolos; i++)
-            {
-                var text11=this.simbolos.get(String.fromCharCode(65+i));
-                text11.off('clicked', this.clickHandler);
-                text11.input.enabled = false;
-                text11.setVisible(false);
-                
-               
-            }
+            //this.crearCangrejos();
             
             this.tiempo=0;
             this.tiempoLimite=0;
@@ -287,22 +297,20 @@ x=x+70;
             {
                 this.octopus1.clearTint();      
                 this.octopus1.setAlpha(1);
-                var x = Phaser.Math.Between(100, 700);
-                var y = Phaser.Math.Between(500, 600);
-                const smallCrab = this.add.sprite(x, y, 'seacreatures').setOrigin(0).play('crab');
+                this.crearCangrejos();
+                
             }else{
                 if(this.yy==2)
                 {
                     this.octopus2.clearTint();      
                 this.octopus2.setAlpha(1);
+                this.crearCangrejos();
                 }else{
                     if(this.yy==3)
                     {
                         this.octopus3.clearTint();      
                     this.octopus3.setAlpha(1);
-                    var x = Phaser.Math.Between(100, 700);
-                var y = Phaser.Math.Between(500, 600);
-                const smallCrab = this.add.sprite(x, y, 'seacreatures').setScale(0.5).setOrigin(0).play('crab');
+                    this.crearCangrejos();
                     }else{
                         if(this.yy==4)
                         {
@@ -310,15 +318,7 @@ x=x+70;
                         this.octopus4.setAlpha(1);
                         
                 
-                this.anims.create({ key: 'purpleFish', frames: this.anims.generateFrameNames('sea', { prefix: 'purpleFish', end: 20, zeroPad: 4 }), repeat: -1 });
-        this.anims.create({ key: 'stingray', frames: this.anims.generateFrameNames('sea', { prefix: 'stingray', end: 23, zeroPad: 4 }), repeat: -1 });
-
-        var x = Phaser.Math.Between(10, 50);
-                var y = Phaser.Math.Between(50, 600);
-        const fish = this.add.sprite(x, y, 'seacreatures').play('purpleFish');
-        var x = Phaser.Math.Between(750, 800);
-                var y = Phaser.Math.Between(100, 600);
-        const ray = this.add.sprite(x, y, 'seacreatures').play('stingray');
+                this.crearCangrejos();
 
                         }else{
                             //if(this.yy==5)
