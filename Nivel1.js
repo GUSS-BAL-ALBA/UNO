@@ -96,6 +96,7 @@ this.cadena=this.frases[0];
                 this.musicLetra.set(String.fromCharCode(65+i),this.sound.add(String.fromCharCode(65+i)));
             }
             this.colocarFrase();
+
         this.cargarAlfabeto();
 
 this.reiniciarTemporizador();
@@ -238,7 +239,8 @@ x=x+70;
             }
             this.yy++;
             this.cadena=this.frases[this.yy-1];
-            this.colocarFrase();
+            this.text1.setText(this.cadena);
+            //this.colocarFrase();
             this.cargarAlfabeto();
            
         }
