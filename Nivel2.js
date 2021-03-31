@@ -333,9 +333,9 @@ crearCangrejos()
             }
             this.yy++;
             this.cadena=this.frases[Phaser.Math.Between(0, 10)];
-            
-            this.cargarAlfabeto();
             this.colocarFrase();
+            this.cargarAlfabeto();
+           
 
             
         }
