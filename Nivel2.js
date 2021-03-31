@@ -155,7 +155,8 @@ this.musicLetra.set('Ü',this.sound.add('U'));
              this.text1.setShadow(2, 2, "#333333", 2, true, true);
 
 //////////////////////////////////////
-this.colocarFrase();        
+this.colocarFrase(); 
+this.colocarSignificadoFrase();       
 this.cargarAlfabeto();
 
 this.reiniciarTemporizador();
@@ -198,15 +199,15 @@ this.timer = this.time.addEvent({ delay: 10000*this.temporizador, callback: this
             //this.alive=0;
             this.cadena = this.cadena.trim(); 
             
-            var x = 50;
-            var y = 350;
+            var x = 10;
+            var y = 300;
             //  Create a bunch of images
             for (var i = 0; i < this.cantSimbolos; i++)
             {
                 
                 if(x>=500){
 y=y+60;
-x=50;
+x=10;
                 }
 
                 this.text11 = this.add.text(x, y, String.fromCharCode(65+i), { font: "50px Arial Black", fill: "#fff" });
@@ -247,7 +248,7 @@ x=x+50;
     }
     colocarVectorCaracteresAcentoFrase(){
     var x = 550;
-            var y = 350;
+            var y = 300;
             //  Create a bunch of images
             for (var [clave, valor] of this.vectorCaracteresFrase) {
                 //console.log(clave + " = " + valor);
@@ -279,13 +280,13 @@ crearCangrejos()
     this.anims.create({ key: 'purpleFish', frames: this.anims.generateFrameNames('sea', { prefix: 'purpleFish', end: 20, zeroPad: 4 }), repeat: -1 });
         this.anims.create({ key: 'stingray', frames: this.anims.generateFrameNames('sea', { prefix: 'stingray', end: 23, zeroPad: 4 }), repeat: -1 });
 
-        var x = Phaser.Math.Between(10,800);
-                var y = Phaser.Math.Between(50, 600);
+        var x = Phaser.Math.Between(100,800);
+                var y = Phaser.Math.Between(300, 500);
         const fish = this.add.sprite(x, y, 'seacreatures').play('purpleFish');
-        var x = Phaser.Math.Between(10, 800);
-                var y = Phaser.Math.Between(100, 500);
+        var x = Phaser.Math.Between(100, 800);
+                var y = Phaser.Math.Between(300, 500);
         const ray = this.add.sprite(x, y, 'seacreatures').play('stingray');
-        this.colocarSignificadoFrase();
+        //this.colocarSignificadoFrase();
 }
     update ()
     {
@@ -356,20 +357,18 @@ crearCangrejos()
             }
             this.yy++;
 
-            console.log(this.frases.length+'  FRASES NIVEL 2');
+            console.log(this.frases.length+'  FRASES NIVEL 2     yy='+this.yy);
         var pos=Phaser.Math.Between(0, 10);
         this.cadena=this.frases[pos];
         this.significadoCadena=this.significadoFrase[pos];
 
             this.colocarFrase();
+            this.colocarSignificadoFrase();
             this.cargarAlfabeto();
            
-
-            
         }
 
         
-
         this.tiempoLimite=this.timedEvent.repeatCount;
             this.text.setText('Pendiente: ' + this.alive + '\nTiempo: ' +this.tiempoLimite + '\nELIMINADO : ' +this.letra );
             
