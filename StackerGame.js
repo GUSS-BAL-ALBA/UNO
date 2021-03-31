@@ -34,7 +34,7 @@ export class StackerGame extends Phaser.Scene {
         this.add.image(0, 466, 'grid').setOrigin(0);
         //this.add.text(720, 0, 'S\n t\na\n c\nk\n e\nr', { fontFamily: 'bebas', fontSize: 74, color: '#ffffff', lineSpacing: -10 }).setShadow(2, 2, "#333333", 2, false, true);
 
-        
+        this.anims.create({ key: 'crab', frames: this.anims.generateFrameNames('sea', { prefix: 'crab1', end: 25, zeroPad: 4 }), repeat: -1 });
 
         //this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
@@ -201,6 +201,10 @@ console.log(this.alive+'   ooo game over ooo  '+this.tiempoLimite);
             text1.setVisible(false);
             this.letra=String.fromCharCode(65+i);
             this.musicLetra.get(String.fromCharCode(65+i)).play();
+
+            var x = Phaser.Math.Between(100, 700);
+                var y = Phaser.Math.Between(500, 600);
+                const smallCrab = this.add.sprite(x, y, 'seacreatures').setScale(0.5).setOrigin(0).play('crab');
             }
         }
         

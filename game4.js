@@ -141,6 +141,8 @@ this.timer = this.time.addEvent({ delay: 10000*this.temporizador, callback: this
                 text1.setVisible(false);
                 this.letra=String.fromCharCode(65+i);
                 this.musicLetra.get(String.fromCharCode(65+i)).play();
+
+                
                 }
             }
             

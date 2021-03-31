@@ -54,7 +54,8 @@ this.cadena;
        //'UNO','DOS','TRES','CUATRO','CINCO','SEIS',
         this.frases=['SI UN PROBLEMA TIENE SOLUCIÓN, ¿PARA QUÉ PREOCUPARSE? Y, SI NO LO TIENE, ¿PARA QUÉ PREOCUPARSE?. NO DEBEMOS DEJARNOS LLEVAR POR LAS DUDAS Y PREOCUPACIONES, SINO ENSEÑAR A NUESTROS HIJOS A SER DECIDIDOS.','EL SOL NO SABE DE BUENOS, EL SOL NO SABE DE MALOS. EL SOL ILUMINA Y CALIENTA A TODOS POR IGUAL. QUIEN SE ENCUENTRA A SÍ MISMO, ES COMO EL SOL. NO DEBEN IMPORTARNOS LAS DIFERENCIAS, DEBEMOS ENSEÑAR A LOS NIÑOS A RESPETAR A TODOS POR IGUAL.','HASTA EL VIAJE MÁS LARGO COMIENZA CON UN SOLO PASO. AUNQUE PAREZCA QUE LA META ES INALCANZABLE, DEBEMOS MOTIVAR A NUESTROS HIJOS PARA QUE LO INTENTEN.','NADIE TROPIEZA MIENTRAS ESTÁ ACOSTADO EN LA CAMA. HAY QUE ARRIESGARSE, Y SOBRE TODO, ESFORZARNOS PARA LOGRAR NUESTROS OBJETIVOS.','LA FELICIDAD VIENE A LA CASA DONDE RÍEN. DEBEMOS ENSEÑAR A NUESTROS HIJOS A SER OPTIMISTAS.','SI PREGUNTAS SENTIRÁS VERGÜENZA UN MINUTO, SI NO LO HACES SENTIRÁS VERGÜENZA TODA LA VIDA','VERIFICA SIETE VECES ANTES DE CUESTIONAR A UNA PERSONA. HAY QUE RESPETAR LAS OPINIONES DE LOS DEMÁS.','HAZ TODO LO QUE PUEDAS, LO DEMÁS DÉJASELO AL DESTINO. SI HAS HECHO TODO LO POSIBLE POR LOGRAR TU OBJETIVO, SIÉNTETE ORGULLOSO DE TI MISMO, INCLUSO AUNQUE NO SALGA COMO ESPERAS.','EL QUE QUIERE SUBIR, INVENTA LA ESCALERA. DEBEMOS MOTIVAR A NUESTROS HIJOS PARA QUE SE SOBREPONGAN A LOS OBSTÁCULOS DE LA VIDA.','LAS FLORES BONITAS NO DAN BUENOS FRUTOS. NO HAY QUE DEJARSE LLEVAR POR LAS APARIENCIAS.','PROVERBIOS JAPONESES'];
         console.log(this.frases.length+'  FRASES NIVEL 2');
-        this.cadena=this.frases[0];
+        this.cadena=Phaser.Math.Between(0, 10);
+
             this.letra='0';
             this.alive=0;
             this.load.audio('perdiste','sound/perdiste.mp3');
@@ -306,6 +307,9 @@ x=x+70;
             {
                 this.octopus1.clearTint();      
                 this.octopus1.setAlpha(1);
+                var x = Phaser.Math.Between(100, 700);
+                var y = Phaser.Math.Between(500, 600);
+                const smallCrab = this.add.sprite(x, y, 'seacreatures').setOrigin(0).play('crab');
             }else{
                 if(this.yy==2)
                 {
@@ -316,11 +320,26 @@ x=x+70;
                     {
                         this.octopus3.clearTint();      
                     this.octopus3.setAlpha(1);
+                    var x = Phaser.Math.Between(100, 700);
+                var y = Phaser.Math.Between(500, 600);
+                const smallCrab = this.add.sprite(x, y, 'seacreatures').setScale(0.5).setOrigin(0).play('crab');
                     }else{
                         if(this.yy==4)
                         {
                             this.octopus4.clearTint();      
                         this.octopus4.setAlpha(1);
+                        
+                
+                this.anims.create({ key: 'purpleFish', frames: this.anims.generateFrameNames('sea', { prefix: 'purpleFish', end: 20, zeroPad: 4 }), repeat: -1 });
+        this.anims.create({ key: 'stingray', frames: this.anims.generateFrameNames('sea', { prefix: 'stingray', end: 23, zeroPad: 4 }), repeat: -1 });
+
+        var x = Phaser.Math.Between(10, 50);
+                var y = Phaser.Math.Between(50, 600);
+        const fish = this.add.sprite(x, y, 'seacreatures').play('purpleFish');
+        var x = Phaser.Math.Between(750, 800);
+                var y = Phaser.Math.Between(100, 600);
+        const ray = this.add.sprite(x, y, 'seacreatures').play('stingray');
+
                         }else{
                             //if(this.yy==5)
                             //{
@@ -333,7 +352,7 @@ x=x+70;
                 }
             }
             this.yy++;
-            this.cadena=this.frases[this.yy-1];
+            this.cadena=Phaser.Math.Between(0, 10);
             
             this.cargarAlfabeto();
             this.colocarFrase();

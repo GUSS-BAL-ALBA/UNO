@@ -29,6 +29,7 @@ export class Boot extends Phaser.Scene {
 
     preload ()
     {
+        this.load.atlas('sea', 'assets/animations/seacreatures_json.png', 'assets/animations/seacreatures_json.json');
         console.log('cargando archivos');
         //this.load.audio('themeF','assets/audio/neriakX_-_Enigma_Gun_Extended_Mix.mp3');
         this.load.audio('theme','assets/audio/audio1.mp3');
@@ -61,14 +62,18 @@ export class Boot extends Phaser.Scene {
         this.load.audio('miss','sound/perdiste.mp3');
         this.load.audio('gamelost', 'sound/perdiste.mp3');
         this.load.audio('gamewon', 'sound/popp.mp3');
-        
+        console.log(Phaser.Math.Between(0, 10));
+
     }
 
     create ()
     {
+        //console.log(Phaser.Math.Between(0, 10));
+
         console.log('colocando musica de fondo volumen medio');
         let scene = this.scene;
 var music = this.sound.add('theme');
+//console.log(Phaser.Math.Between(0, 10));
 
 
 music.play();
